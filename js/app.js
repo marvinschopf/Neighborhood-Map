@@ -61,5 +61,5 @@ function AppViewModel() {
 }
 
 function startBootstrap() {
-	ko.applyBindings(new AppViewModel()),
+	ko.applyBindings(new AppViewModel());
 }
