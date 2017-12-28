@@ -52,7 +52,7 @@ function AppViewModel() {
 
 	this.locations = ko.observableArray([]);
 	defaultLocations.forEach(function(e) {
-		this.locations.push(e);
+		self.locations.push(e);
 	});
 	map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 12,
