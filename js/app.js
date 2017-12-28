@@ -55,7 +55,7 @@ function AppViewModel() {
 	defaultLocations.forEach(function(e) {
 		self.locations.push(e);
 	});
-	map = new google.maps.Map(document.getElementById('main'), {
+	map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 12,
 			center: {lat: 111.1, lng: 111.1}
 	});
