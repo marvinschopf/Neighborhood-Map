@@ -35,9 +35,9 @@ var Location = function(data) {
 	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
 	this.infoWindow = new google.maps.InfoWindow({content: self.windowContent});
 	this.marker = new google.maps.Marker({
-			position: new google.maps.LatLng(data.lat, data.long),
+			position: {lat:self.lat,long:self.long},
 			map: map,
-			title: data.name
+			title: self.name
 	});
 	this.toggleMarker = ko.computed(function() {
 		if(this.isVisible() === true) {
@@ -47,6 +47,23 @@ var Location = function(data) {
 		}
 		return true;
 	}, this);
+
+	this.marker.addListener('click', function(){
+		self.contentString = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
+
+        self.infoWindow.setContent(self.contentString);
+
+		self.infoWindow.open(map, this);
+
+		self.marker.setAnimation(google.maps.Animation.BOUNCE);
+      	setTimeout(function() {
+      		self.marker.setAnimation(null);
+     	}, 2100);
+	});
+
+	this.bounce = function(place) {
+		google.maps.event.trigger(self.marker, 'click');
+	};
 
 	this.toggleMarker();
 }
