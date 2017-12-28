@@ -6,11 +6,9 @@
 }
 
 .menu {
-	width:50%;
-	height:50%;
+	height:100% !important;
 }
 
 #map {
-	width:50%;
-	height:50%;
+	height:100% !important;
 }
