@@ -55,6 +55,7 @@ function AppViewModel() {
 
 	this.locations = ko.observableArray([]);
 	defaultLocations.forEach(function(e) {
+		console.log(e.name);
 		self.locations.push(new Location(e));
 	});
 	map = new google.maps.Map(document.getElementById('map'), {
