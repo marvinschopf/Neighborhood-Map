@@ -30,6 +30,20 @@ var Location = function(data) {
 	this.isVisible = ko.observable(true);
 
 	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
+	this.infoWindow = new google.maps.InfoWindow({content: self.windowContent});
+	this.marker = new google.maps.Marker({
+			position: new google.maps.LatLng(data.lat, data.long),
+			map: map,
+			title: data.name
+	});
+	this.toggleMarker = ko.computed(function() {
+		if(this.visible() === true) {
+			this.marker.setMap(map);
+		} else {
+			this.marker.setMap(null);
+		}
+		return true;
+	}, this);
 }
 
 
