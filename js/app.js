@@ -90,7 +90,7 @@ function AppViewModel() {
 	this.list = ko.computed(function() {
 		var searchQuery = self.query.toLowerCase();
 		if(!searchQuery) {
-			self.locations.forEach(function(e) {
+			self.locations().forEach(function(e) {
 				e.isVisible(true);
 			});
 			return self.locations();
