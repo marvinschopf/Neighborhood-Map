@@ -6,19 +6,32 @@ function mapsError() {
 
 var defaultQuery = "";
 
-var defaultLocations = [
-	{
-		name:"Main-Taunus-Zentrum",
-		lat: "50.1436",
-		long: "8.4483"
-	},
-	{
-		name: "Frankfurt",
-		lat: "50.1436",
-		long: "9.4483"
-	}
+var config = {
+	locations: [
+		{
+			name: 'Roemerberg',
+			lat: 50.110421,
+			long: 8.68214
+		},
 
-];
+		{
+			name: 'Main-Tower',
+			lat: 50.112557,
+			long: 8.672145
+		},
+
+		{
+			name: 'Goethe-House and Museum',
+			lat: 50.111276,
+			long: 8.677586
+		}
+
+	],
+	map: {
+		lat: 50.1436,
+		long: 8.4483
+	}
+}
 
 
 var map;
@@ -78,12 +91,12 @@ function AppViewModel() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 12,
-			center: {lat: 50.1436, lng: 8.4483}
+			center: {lat: config.map.lat, lng: config.map.long}
 	});
 
 	this.query = ko.observable(defaultQuery);
 	this.locations = ko.observableArray([]);
-	defaultLocations.forEach(function(e) {
+	config.locations.forEach(function(e) {
 		console.log(e.name);
 		self.locations.push(new Location(e));
 	});
