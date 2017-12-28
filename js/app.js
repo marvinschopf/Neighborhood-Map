@@ -1,7 +1,7 @@
 'use strict';
 
 function mapsError() {
-	alert("An error occured while loading the Map.");
+	alert("An error occured while loading the Map. Please reload the page and try again/open a issue at https://github.com/MagicMarvMan/Neighborhood-Map/issues.");
 }
 
 var defaultQuery = "";
