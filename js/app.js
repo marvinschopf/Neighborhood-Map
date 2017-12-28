@@ -7,13 +7,13 @@ function mapsError() {
 var defaultLocations = [
 	{
 		name:"Main-Taunus-Zentrum",
-		lat: 111.1,
-		long: 111.1
+		lat: 50.1436,
+		long: 8.4483
 	},
 	{
 		name: "Frankfurt",
-		lat: 111.1,
-		long: 111.1
+		lat: 50.1436,
+		long: 8.4483
 	}
 
 ];
