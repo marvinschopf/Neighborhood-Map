@@ -25,10 +25,12 @@ var Location = function(data) {
 	var self = this;
 
 	this.name = data.name;
-	this.lat = data.lat;
-	this.long = data.long;
+	this.lat = Number(data.lat);
+	this.long = Number(data.long);
 
 	console.log("Initialized "+this.name);
+	console.log("Lat: "+this.lat);
+	console.log("Long: "+this.long);
 
 	this.isVisible = ko.observable(true);
 
