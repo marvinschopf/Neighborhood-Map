@@ -74,15 +74,17 @@ var Location = function(data) {
 function AppViewModel() {
 	var self = this;
 
+	map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 12,
+			center: {lat: 50.1436, lng: 8.4483}
+	});
+
 	this.locations = ko.observableArray([]);
 	defaultLocations.forEach(function(e) {
 		console.log(e.name);
 		self.locations.push(new Location(e));
 	});
-	map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 12,
-			center: {lat: 50.1436, lng: 8.4483}
-	});
+	
 
 	this.mapElem = document.getElementById('map');
 	this.mapElem.style.height = window.innerHeight - 50;
