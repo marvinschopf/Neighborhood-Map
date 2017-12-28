@@ -40,7 +40,7 @@ var Location = function(data) {
 			title: data.name
 	});
 	this.toggleMarker = ko.computed(function() {
-		if(this.visible() === true) {
+		if(this.isVisible() === true) {
 			this.marker.setMap(map);
 		} else {
 			this.marker.setMap(null);
