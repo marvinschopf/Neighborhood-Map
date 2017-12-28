@@ -97,7 +97,7 @@ function AppViewModel() {
 		} else {
 			return ko.utils.arrayFilter(self.locations(),function(e) {
 				var uneditedTitle = e.name.toLowerCase();
-				var computedVisibility = (uneditedTitle.search(filter) >= 0);
+				var computedVisibility = (uneditedTitle.search(searchQuery) >= 0);
 				e.isVisible(computedVisibility);
 				return computedVisibility;
 			});
