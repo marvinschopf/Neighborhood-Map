@@ -72,7 +72,7 @@ var config = {
 	map: {
 		lat: 50.111221,
 		long: 8.682562,
-		zoom: 15
+		zoom: 13
 	}
 }
 
