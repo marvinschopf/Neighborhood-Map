@@ -27,21 +27,9 @@ var config = {
 		},
 
 		{
-			name: 'Altstadt',
-			lat: 50.111638,
-			long: 8.681879
-		},
-
-		{
 			name: 'Main-Station',
 			lat: 50.107726,
 			long: 8.664607
-		},
-
-		{
-			name: 'Deutsche Bank Twin-Towers',
-			lat: 50.113852,
-			long: 8.668174
 		},
 
 		{
@@ -63,12 +51,6 @@ var config = {
 		},
 
 		{
-			name: 'St. Bartholomew\'s Cathedral',
-			lat: 50.110697,
-			long: 8.685420
-		},
-
-		{
 			name: 'Zoo Frankfurt',
 			lat: 50.116368,
 			long: 8.699447
@@ -84,18 +66,6 @@ var config = {
 			name: 'Palm Garden',
 			lat: 50.123133,
 			long: 8.656486
-		},
-
-		{
-			name: 'The Hauptwache',
-			lat: 50.113759,
-			long: 8.679039
-		},
-
-		{
-			name: 'The Eschenheimer Tower',
-			lat: 50.116996,
-			long: 8.679684
 		}
 
 	],
