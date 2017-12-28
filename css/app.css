@@ -5,8 +5,7 @@
 	height:100% !important;
 }
 
-mapframe {
-	width:100%;
-	position:absolute;
-	height:100%;
+#map {
+	width:100% !important;
+	height:100% !important;
 }
