@@ -95,7 +95,7 @@ var Location = function(data) {
 			console.log(data.response);
 			console.log(data.response.venues[0]);
 			if (typeof data.response.venues[0].url !== 'undefined') {
-  				self.url = data.response.venus[0].url;
+  				self.url = data.response.venues[0].url;
 			}
 
 			if(typeof data.response.venues[0].contact.formattedPhone !== 'undefined') {
