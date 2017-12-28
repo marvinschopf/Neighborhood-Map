@@ -20,7 +20,17 @@ var defaultLocations = [
 
 
 
+var Location = function(data) {
+	var self = this;
 
+	this.name = data.name;
+	this.lat = data.lat;
+	this.long = data.long;
+
+	this.isVisible = ko.observable(true);
+
+	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
+}
 
 
 function AppViewModel() {
