@@ -40,13 +40,15 @@ var Location = function(data) {
 			title: data.name
 	});
 	this.toggleMarker = ko.computed(function() {
-		if(this.isVisible === true) {
+		if(this.isVisible() === true) {
 			this.marker.setMap(map);
 		} else {
 			this.marker.setMap(null);
 		}
 		return true;
 	}, this);
+
+	this.toggleMarker();
 }
 
 
