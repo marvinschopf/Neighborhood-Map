@@ -107,6 +107,7 @@ var config = {
 
 
 var map;
+var allInfowindows = ko.observableArray([]);
 
 var Location = function(data) {
 	var self = this;
@@ -123,6 +124,7 @@ var Location = function(data) {
 
 	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
 	this.infoWindow = new google.maps.InfoWindow({content: self.windowContent});
+	allInfowindows().push(self.infoWindow);
 	this.marker = new google.maps.Marker({
 			position: {lat:Number(self.lat),lng:Number(self.long)},
 			map: map,
@@ -138,6 +140,11 @@ var Location = function(data) {
 	}, this);
 
 	this.marker.addListener('click', function(){
+
+		allInfowindows.forEach(function(e) {
+			e.close();
+		});
+
 		self.contentString = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
 
         self.infoWindow.setContent(self.contentString);
