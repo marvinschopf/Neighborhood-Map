@@ -157,11 +157,8 @@ var Location = function(data) {
 		});
 
 		self.contentString = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span><center><br><span style="font-weight:bold;">Homepage:&nbsp;</span><a href="'+self.url+'" target="_blank">'+self.url+'</a><br><span style="font-weight:bold;">Phone:&nbsp;</span>'+self.phone+'<br><span style="font-weight:bold;">Here now:&nbsp;</span>'+self.hereNow+'</center></div>';
-
-        self.infoWindow.setContent(self.contentString);
-
+		self.infoWindow.setContent(self.contentString);
 		self.infoWindow.open(map, this);
-
 		self.marker.setAnimation(google.maps.Animation.BOUNCE);
       	setTimeout(function() {
       		self.marker.setAnimation(null);
