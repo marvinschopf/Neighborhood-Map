@@ -141,7 +141,7 @@ var Location = function(data) {
 
 	this.marker.addListener('click', function(){
 
-		allInfowindows.forEach(function(e) {
+		allInfowindows().forEach(function(e) {
 			e.close();
 		});
 
