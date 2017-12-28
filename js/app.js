@@ -88,7 +88,7 @@ function AppViewModel() {
 		self.locations.push(new Location(e));
 	});
 	this.list = ko.computed(function() {
-		var searchQuery = self.query.toLowerCase();
+		var searchQuery = self.query().toLowerCase();
 		if(!searchQuery) {
 			self.locations().forEach(function(e) {
 				e.isVisible(true);
