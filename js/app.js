@@ -77,8 +77,7 @@ var Location = function(data) {
       		self.marker.setAnimation(null);
      	}, 2100);
 	});
-
-	this.bounce = function(place) {
+	this.bounceMarker = function(place) {
 		google.maps.event.trigger(self.marker, 'click');
 	};
 

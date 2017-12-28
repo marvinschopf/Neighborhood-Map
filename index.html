@@ -10,12 +10,10 @@
 <body>
 	<div class="app row" id="app">
 		<div class="menu col-md-6">
-			<div class="search" id="search">
-				<input data-bind="textInput: query, valueUpdate: 'afterkeydown'" />
-			</div>
-			<div class="list" id="list">
-				<ul class="results" id="results" data-bind="foreach: list">
-					<li class="place" id="place" data-bind="text: name, click: bounce"></li>
+			<input class="searchWidget" data-bind="textInput: query, valueUpdate: 'afterkeydown'" />
+			<div class="locationList">
+				<ul class="results" data-bind="foreach: list">
+					<li class="placeItem" data-bind="text: name, click: bounceMarker"></li>
 				</ul>
 			</div>
 		</div>

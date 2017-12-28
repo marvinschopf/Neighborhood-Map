@@ -13,3 +13,20 @@
 	height:100% !important;
 	max-height:100% !important;
 }
+
+.searchWidget {
+	width:100%;
+	height:20px;
+	max-height:5%;
+}
+
+.results {
+	background-color:green;
+}
+
+.placeItem {
+	height:6px;
+	border:solid green;
+	color:white;
+	background-color:blue;
+}
