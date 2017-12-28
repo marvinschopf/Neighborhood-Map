@@ -57,7 +57,7 @@ function AppViewModel() {
 	});
 	map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 12,
-			center: {lat: 111.1, lng: 111.1}
+			center: {lat: 50.1436, lng: 8.4483}
 	});
 }
 
