@@ -6,9 +6,10 @@
 }
 
 .menu {
-	height:100% !important;
+	max-height:100% !important;
 }
 
 #map {
 	height:100% !important;
+	max-height:100% !important;
 }
