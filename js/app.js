@@ -59,6 +59,9 @@ function AppViewModel() {
 			zoom: 12,
 			center: {lat: 50.1436, lng: 8.4483}
 	});
+
+	this.mapElem = document.getElementById('map');
+	this.mapElem.style.height = window.innerHeight - 50;
 }
 
 function startBootstrap() {
