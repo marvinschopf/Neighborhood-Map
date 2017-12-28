@@ -19,6 +19,7 @@ var defaultLocations = [
 ];
 
 
+var map;
 
 var Location = function(data) {
 	var self = this;
