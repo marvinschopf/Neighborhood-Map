@@ -88,7 +88,7 @@ var Location = function(data) {
 	this.long = Number(data.long);
 	this.phone = "";
 	this.url = "";
-
+/*
 	$.getJSON("https://api.foursquare.com/v2/venues/search?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
 		console.log(data);
 			if(data.response.venues[0].url.length >= 1) {
@@ -99,6 +99,19 @@ var Location = function(data) {
 			self.phone = data.response.venues[0].contact.formattedPhone;
 		}
 		
+	});*/
+
+	$.ajax({
+		url: "https://api.foursquare.com/v2/venues/search?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&v=20171228&ll="+self.lat+","+self.long
+	}).success(function(data) {
+		console.log(data);
+			if(data.response.venues[0].url.length >= 1) {
+			self.url = data.response.venues[0].url;
+		}
+
+		if(data.response.venues[0].contact.formattedPhone.length >= 1) {
+			self.phone = data.response.venues[0].contact.formattedPhone;
+		}
 	});
 
 
