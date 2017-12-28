@@ -101,7 +101,8 @@ var config = {
 	],
 	map: {
 		lat: 50.111221,
-		long: 8.682562
+		long: 8.682562,
+		zoom: 15
 	}
 }
 
@@ -168,7 +169,7 @@ function AppViewModel() {
 	var self = this;
 
 	map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 12,
+			zoom: config.map.zoom,
 			center: {lat: config.map.lat, lng: config.map.long}
 	});
 
