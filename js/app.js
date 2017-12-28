@@ -7,13 +7,13 @@ function mapsError() {
 var defaultLocations = [
 	{
 		name:"Main-Taunus-Zentrum",
-		lat: 000,
-		long: 000
+		lat: 000.0,
+		long: 000.0
 	},
 	{
 		name: "Frankfurt",
-		lat: 000,
-		long: 000
+		lat: 000.0,
+		long: 000.0
 	}
 
 ];
@@ -56,7 +56,7 @@ function AppViewModel() {
 	});
 	map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 12,
-			center: {lat: 000, lng: 000}
+			center: {lat: 000.0, lng: 000.0}
 	});
 }
 
