@@ -4,6 +4,8 @@ function mapsError() {
 	alert("An error occured while loading the Map.");
 }
 
+var defaultQuery = "";
+
 var defaultLocations = [
 	{
 		name:"Main-Taunus-Zentrum",
@@ -79,11 +81,28 @@ function AppViewModel() {
 			center: {lat: 50.1436, lng: 8.4483}
 	});
 
+	this.query = defaultQuery;
 	this.locations = ko.observableArray([]);
 	defaultLocations.forEach(function(e) {
 		console.log(e.name);
 		self.locations.push(new Location(e));
 	});
+	this.list = ko.computed(function() {
+		var searchQuery = self.query.toLowerCase();
+		if(!searchQuery) {
+			self.locations.forEach(function(e) {
+				e.isVisible(true);
+			});
+			return self.locations();
+		} else {
+			return ko.utils.arrayFilter(self.locations(),function(e) {
+				var uneditedTitle = e.name.toLowerCase();
+				var computedVisibility = (string.search(filter) >= 0);
+				e.isVisible(computedVisibility);
+				return computedVisibility;
+			});
+		}
+	},self);
 	
 
 	this.mapElem = document.getElementById('map');
