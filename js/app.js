@@ -118,7 +118,7 @@ function AppViewModel() {
 	
 
 	this.mapElem = document.getElementById('map');
-	this.mapElem.style.height = window.innerHeight - 50;
+	//this.mapElem.style.height = window.innerHeight - 50;
 }
 
 function startBootstrap() {
