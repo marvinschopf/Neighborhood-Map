@@ -151,7 +151,7 @@ var Location = function(data) {
 			e.close();
 		});
 
-		self.contentString = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
+		self.contentString = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span><br><a href="'+self.url+'" target="_blank">'+self.url+'</a><br>'+self.phone+'</div>';
 
         self.infoWindow.setContent(self.contentString);
 
