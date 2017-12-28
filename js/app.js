@@ -28,6 +28,8 @@ var Location = function(data) {
 	this.lat = data.lat;
 	this.long = data.long;
 
+	console.log("Initialized "+this.name);
+
 	this.isVisible = ko.observable(true);
 
 	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
