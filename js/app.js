@@ -81,7 +81,7 @@ function AppViewModel() {
 			center: {lat: 50.1436, lng: 8.4483}
 	});
 
-	this.query = defaultQuery;
+	this.query = ko.observable(defaultQuery);
 	this.locations = ko.observableArray([]);
 	defaultLocations.forEach(function(e) {
 		console.log(e.name);
