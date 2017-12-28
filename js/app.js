@@ -15,7 +15,7 @@ var defaultLocations = [
 	{
 		name: "Frankfurt",
 		lat: "50.1436",
-		long: "8.4483"
+		long: "9.4483"
 	}
 
 ];
