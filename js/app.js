@@ -24,6 +24,78 @@ var config = {
 			name: 'Goethe-House and Museum',
 			lat: 50.111276,
 			long: 8.677586
+		},
+
+		{
+			name: 'Altstadt',
+			lat: 50.111638,
+			long: 8.681879
+		},
+
+		{
+			name: 'Main-Station',
+			lat: 50.107726,
+			long: 8.664607
+		},
+
+		{
+			name: 'Deutsche Bank Twin-Towers',
+			lat: 50.113852,
+			long: 8.668174
+		},
+
+		{
+			name: 'Senckenberg Natural History Museum',
+			lat: 50.117574,
+			long: 8.651723
+		},
+
+		{
+			name: 'The Frankfurt Museum of Modern Art',
+			lat: 50.112022,
+			long: 8.684780
+		},
+
+		{
+			name: 'The Old Opera House',
+			lat: 50.116046,
+			long: 8.671895
+		},
+
+		{
+			name: 'St. Bartholomew\'s Cathedral',
+			lat: 50.110697,
+			long: 8.685420
+		},
+
+		{
+			name: 'Zoo Frankfurt',
+			lat: 50.116368,
+			long: 8.699447
+		},
+
+		{
+			name: 'St. Paul\'s Church',
+			lat: 50.111228,
+			long: 8.680736
+		},
+
+		{
+			name: 'Palm Garden',
+			lat: 50.123133,
+			long: 8.656486
+		},
+
+		{
+			name: 'The Hauptwache',
+			lat: 50.113759,
+			long: 8.679039
+		},
+
+		{
+			name: 'The Eschenheimer Tower',
+			lat: 50.116996,
+			long: 8.679684
 		}
 
 	],
