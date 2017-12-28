@@ -5,7 +5,12 @@
 	height:100% !important;
 }
 
+.menu {
+	width:50% !important;
+	height:50% !important;
+}
+
 #map {
-	width:100% !important;
-	height:100% !important;
+	width:50% !important;
+	height:50% !important;
 }
