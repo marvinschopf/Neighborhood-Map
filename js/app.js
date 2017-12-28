@@ -86,6 +86,19 @@ var Location = function(data) {
 	this.name = data.name;
 	this.lat = Number(data.lat);
 	this.long = Number(data.long);
+	this.phone = "";
+	this.url = "";
+
+	$.getJSON("https://api.foursquare.com/v2/venues?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
+		if(data.response.venues[0].url) {
+			self.url = data.response.venues[0].url;
+		}
+
+		if(data.response.venues[0].contact.formattedPhone) {
+			self.phone = data.response.venues[0].contact.formattedPhone;
+		}
+	});
+
 
 	console.log("Initialized "+this.name);
 	console.log("Lat: "+this.lat);
@@ -93,7 +106,7 @@ var Location = function(data) {
 
 	this.isVisible = ko.observable(true);
 
-	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
+	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span><br><a href="'+self.url+'" target="_blank">'+self.url+'</a><br>'+self.phone+'</div>';
 	this.infoWindow = new google.maps.InfoWindow({content: self.windowContent});
 	allInfowindows().push(self.infoWindow);
 	this.marker = new google.maps.Marker({
