@@ -35,7 +35,7 @@ var Location = function(data) {
 	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span></div>';
 	this.infoWindow = new google.maps.InfoWindow({content: self.windowContent});
 	this.marker = new google.maps.Marker({
-			position: {lat:self.lat,long:self.long},
+			position: {lat:self.lat,long:self.lng},
 			map: map,
 			title: self.name
 	});
