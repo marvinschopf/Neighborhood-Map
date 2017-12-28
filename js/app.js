@@ -87,7 +87,7 @@ var Location = function(data) {
 	this.lat = Number(data.lat);
 	this.long = Number(data.long);
 	this.phone = "Unknown";
-	this.url = "Unknown";
+	this.url = "#Unknown";
 	this.hereNow = "Nobody here";
 	$.getJSON("https://api.foursquare.com/v2/venues/search?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
 		console.log(self.name+":");
