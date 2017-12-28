@@ -33,3 +33,9 @@
 	list-style-type:none;
 	margin-left:none;
 }
+
+@media screen and (min-width: 500px) {
+   #map {
+   		position:fixed;
+   }
+}
