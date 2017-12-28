@@ -86,8 +86,9 @@ var Location = function(data) {
 	this.name = data.name;
 	this.lat = Number(data.lat);
 	this.long = Number(data.long);
-	this.phone = "";
-	this.url = "";
+	this.phone = "Unknown";
+	this.url = "Unknown";
+	this.hereNow = "Nobody here";
 	$.getJSON("https://api.foursquare.com/v2/venues/search?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
 		console.log(self.name+":");
 		if(data.response.venues.length > 0) {
@@ -100,6 +101,10 @@ var Location = function(data) {
 
 			if(typeof data.response.venues[0].contact.formattedPhone !== 'undefined') {
 				self.phone = data.response.venues[0].contact.formattedPhone;
+			}
+
+			if(typeof data.response.venues[0].hereNow.summary !== 'undefined') {
+				self.hereNow = data.response.venues[0].hereNow.summary;
 			}
 		}
 		
@@ -128,7 +133,7 @@ var Location = function(data) {
 
 	this.isVisible = ko.observable(true);
 
-	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span><br><a href="'+self.url+'" target="_blank">'+self.url+'</a><br>'+self.phone+'</div>';
+	this.windowContent = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span><center><br><span style="font-weight:bold;">Homepage:&nbsp;</span><a href="'+self.url+'" target="_blank">'+self.url+'</a><br><span style="font-weight:bold;">Phone:&nbsp;</span>'+self.phone+'<br><span style="font-weight:bold;">Here now:&nbsp;</span>'+self.hereNow+'</center></div>';
 	this.infoWindow = new google.maps.InfoWindow({content: self.windowContent});
 	allInfowindows().push(self.infoWindow);
 	this.marker = new google.maps.Marker({
@@ -151,7 +156,7 @@ var Location = function(data) {
 			e.close();
 		});
 
-		self.contentString = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span><br><a href="'+self.url+'" target="_blank">'+self.url+'</a><br>'+self.phone+'</div>';
+		self.contentString = '<div class="infwindowcon"><span class="tit"><b>'+data.name+'</b></span><center><br><span style="font-weight:bold;">Homepage:&nbsp;</span><a href="'+self.url+'" target="_blank">'+self.url+'</a><br><span style="font-weight:bold;">Phone:&nbsp;</span>'+self.phone+'<br><span style="font-weight:bold;">Here now:&nbsp;</span>'+self.hereNow+'</center></div>';
 
         self.infoWindow.setContent(self.contentString);
 
