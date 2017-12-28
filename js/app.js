@@ -91,13 +91,16 @@ var Location = function(data) {
 
 	$.getJSON("https://api.foursquare.com/v2/venues/search?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
 		console.log(data);
-		if(data.response.venues[0].url) {
+		if(data.response.venues.length > 0) {
+			if(data.response.venues[0].url) {
 			self.url = data.response.venues[0].url;
 		}
 
 		if(data.response.venues[0].contact.formattedPhone) {
 			self.phone = data.response.venues[0].contact.formattedPhone;
 		}
+		}
+		
 	});
 
 
