@@ -120,6 +120,8 @@ var Location = function(data) {
 		}
 		
 		
+	}).fail(function() {
+		alert("The Foursquare Request failed. Try again or open a issue at GitHub.");
 	});
 /*
 	$.ajax({
