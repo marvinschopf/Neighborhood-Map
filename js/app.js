@@ -90,6 +90,7 @@ var config = {
 
 var map;
 var allInfowindows = ko.observableArray([]);
+var foursquareContinue = true;
 
 var Location = function(data) {
 	var self = this;
@@ -100,7 +101,9 @@ var Location = function(data) {
 	this.phone = "Unknown";
 	this.url = "#Unknown";
 	this.hereNow = "Nobody here";
-	$.getJSON("https://api.foursquare.com/v2/venues/search?client_id="+config.keys.foursquare.client_id+"&client_secret="+config.keys.foursquare.client_secret+"&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
+
+	if(foursquareContinue) {
+		$.getJSON("https://api.foursquare.com/v2/venues/search?client_id="+config.keys.foursquare.client_id+"&client_secret="+config.keys.foursquare.client_secret+"&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
 		console.log(self.name+":");
 		if(data.response.venues.length > 0) {
 			console.log(data);
@@ -121,8 +124,11 @@ var Location = function(data) {
 		
 		
 	}).fail(function() {
-		alert("The Foursquare Request failed. Try again or open a issue at GitHub.");
+		foursquareContinue = false;
+		alert("The Foursquare Requests failed. Try again or open a issue at GitHub.");
 	});
+	}
+	
 /*
 	$.ajax({
 		url: "https://api.foursquare.com/v2/venues/search?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&v=20171228&ll="+self.lat+","+self.long
