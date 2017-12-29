@@ -81,8 +81,8 @@ var config = {
 		},
 
 		foursquare: {
-			client_id: "PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B",
-			client_secret: "RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV"
+			client_id: "[YOUR CLIENTID HERE]",
+			client_secret: "[YOUR CLIENTSECRET HERE]"
 		}
 	}
 }
