@@ -11,9 +11,9 @@ A demo is available at [https://magicmarvman.github.io/Neighborhood-Map](https:/
 1. Use a local webserver, like apache or SimpleHTTPServer
 2. Clone the project from GitHub
 3. Start the server insidw the project‘s directory
-4. Change the api keys in the index.html and app.js (in the one Foursquare request)
-to your values.
-5. Enjoy :)
+4. Put your Google Maps Key in the <script> tag in the footer of the index.html.
+5. Put your Foursquare API-Keys in the config.keys.foursquare section at the top of the app.js
+6. Enjoy :)
 ## Screenshots
 ![Screenshot #1](https://marvnet.de/wp-content/uploads/2017/12/Neighborhood-Map.png "Screenshot #1")
 

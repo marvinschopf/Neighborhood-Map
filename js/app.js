@@ -73,6 +73,17 @@ var config = {
 		lat: 50.111221,
 		long: 8.682562,
 		zoom: 14
+	},
+
+	keys: {
+		google: {
+			// Place your key in the <script> tag in the index.html footer
+		},
+
+		foursquare {
+			client_id: "PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B",
+			client_secret: "RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV"
+		}
 	}
 }
 
@@ -89,7 +100,7 @@ var Location = function(data) {
 	this.phone = "Unknown";
 	this.url = "#Unknown";
 	this.hereNow = "Nobody here";
-	$.getJSON("https://api.foursquare.com/v2/venues/search?client_id=PLTZT1HHN0Q20XAE5TRDFUPJLV3YKW4F5ZA00SJYPVTOHO5B&client_secret=RMJKT5CTWVEIFUEKRSAAF01TTABE53IA2OU4IGA4ZRPL1TBV&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
+	$.getJSON("https://api.foursquare.com/v2/venues/search?client_id="+config.keys.foursquare.client_id+"&client_secret="+config.keys.foursquare.client_secret+"&v=20171228&ll="+self.lat+","+self.long+"&query="+self.name, function(data) {
 		console.log(self.name+":");
 		if(data.response.venues.length > 0) {
 			console.log(data);
